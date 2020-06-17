@@ -116,4 +116,6 @@ VOLUME /etc/suricata
 
 COPY /docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
-RUN date > /etc/build_date
+
+ARG BUILD_DATE
+RUN echo "${BUILD_DATE}" > /etc/build_date

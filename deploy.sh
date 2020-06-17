@@ -39,6 +39,7 @@ deploy() {
            --target runner \
            --build-arg CORES="${cores}" \
            --build-arg VERSION="${VERSION}" \
+           --build-arg BUILD_DATE="$(date)" \
            -t ${NAME}:${VERSION}-${arch} \
            -f Dockerfile.${arch} .
 
